@@ -1,0 +1,21 @@
+def count_pairs_with_given_difference(activities, k):
+    pairs_count = 0
+
+    # Iterate through each activity and check for pairs
+    for i in range(len(activities)):
+        for j in range(i + 1, len(activities)):
+            # Calculate the absolute difference
+            diff = abs(activities[i] - activities[j])
+            # If the difference matches k, increment pairs_count
+            if diff == k:
+                pairs_count += 1
+
+    return pairs_count
+
+# Input
+n = int(input())
+activities = list(map(int, input().split()))
+k = int(input())
+
+# Output
+print(count_pairs_with_given_difference(activities, k))
